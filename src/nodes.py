@@ -19,7 +19,7 @@ def pubNodeInfos():
     rospy.loginfo(nodeString)
 
     pub.publish(nodeString)
-    rospy.sleep(2)
+    rospy.sleep(10)
 
 
 if __name__ == '__main__':
