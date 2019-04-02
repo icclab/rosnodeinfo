@@ -7,8 +7,10 @@ import rosnode
 from std_msgs.msg import String
 
 def pubNodeInfos():
-  pub = rospy.Publisher('runningNodes', String, queue_size=1)
-  rospy.init_node('nodeInfoPublisher', anonymous=False)
+  # Get the ~private namespace parameters from command line or launch file.
+  topic = rospy.get_param('~topic', 'running_nodes')
+  rospy.loginfo('topic = %s', topic)
+  pub = rospy.Publisher(topic, String, queue_size=1)
   
   while not rospy.is_shutdown():
     nodeString = ""
@@ -23,7 +25,8 @@ def pubNodeInfos():
 
 
 if __name__ == '__main__':
-  try:  
+  try:
+    rospy.init_node('nodeInfoPublisher', anonymous=False)
     pubNodeInfos()
   except rospy.ROSInterruptException:
     print "node interrupted"
