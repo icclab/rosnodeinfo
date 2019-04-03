@@ -26,7 +26,7 @@ def pubNodeInfos():
 
 if __name__ == '__main__':
   try:
-    rospy.init_node('nodeInfoPublisher', anonymous=False)
+    rospy.init_node('node_info_publisher', anonymous=False)
     pubNodeInfos()
   except rospy.ROSInterruptException:
     print "node interrupted"

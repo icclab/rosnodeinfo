@@ -1,0 +1,5 @@
+<launch>
+
+  <node pkg="rosnodeinfo" type="nodes.py" name="node_info_publisher" args="_topic:='running_nodes_robot'" respawn="true"/>
+
+</launch>
