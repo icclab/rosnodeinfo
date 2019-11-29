@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+from __future__ import print_function
 import roslib
 import rospy
 import rosnode
@@ -29,4 +30,4 @@ if __name__ == '__main__':
     rospy.init_node('node_info_publisher', anonymous=False)
     pubNodeInfos()
   except rospy.ROSInterruptException:
-    print "node interrupted"
+    print("node interrupted")
